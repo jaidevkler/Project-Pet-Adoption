@@ -2,6 +2,9 @@
 
 This project analyzes pet adoption data to uncover factors that influence adoption rates and build a classification model to predict adoption status.
 
+### [Presentation Link](https://gamma.app/docs/Pet-Adoption-y53svrpmz3k75mv)
+
+
 ## Questions Addressed
 
 1. What is the overall adoption rate of pets in the dataset?
@@ -78,3 +81,47 @@ This project analyzes pet adoption data to uncover factors that influence adopti
     ros = RandomOverSampler(random_state=42)
     X_resampled, y_resampled = ros.fit_resample(X_train, y_train)
     ```
+8. **Model Selection**:
+    - Various machine learning models are trained and evaluated.
+    ```python
+    models = {
+        'Logistic Regression': LogisticRegression(),
+        'Support Vector Machine': SVC(),
+        'K-Nearest Neighbors': KNeighborsClassifier(),
+        'Decision Tree': tree.DecisionTreeClassifier(),
+        'Random Forest': RandomForestClassifier(),
+        'Extra Trees': ExtraTreesClassifier(),
+        'Gradient Boosting': GradientBoostingClassifier(),
+        'AdaBoost': AdaBoostClassifier()
+    }
+    ```
+
+9. **Optimization**:
+    - Hyperparameter tuning is performed using GridSearchCV
+    ```python
+    param_grid = {'C': [0.1, 1, 10, 100], 'gamma': [1, 0.1, 0.01, 0.001], 'kernel': ['rbf']}
+    grid = GridSearchCV(SVC(), param_grid, refit=True, verbose=2)
+    grid.fit(X_train, y_train)
+    ```
+
+## Conclusion
+
+This notebook provides a comprehensive analysis of pet adoption data and builds a classification model to predict adoption outcomes based on various features. The steps include data preprocessing, exploratory data analysis, model training, and optimization.
+
+## Requirements
+
+- pandas
+- numpy
+- plotly
+- matplotlib
+- scikit-learn
+- imbalanced-learn
+
+## How to Use
+
+1. Clone the repository.
+2. Install the required packages.
+3. Run the Jupyter notebook to explore the analysis and results.
+
+## Contributors
+Ramona Ciobanu, Emmanuel Charles, Enock Mudzamiri, Ezra Timmons, Jaidev Kler and Oliver Tabibzadeh
