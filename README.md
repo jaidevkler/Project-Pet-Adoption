@@ -6,6 +6,7 @@
 
 The objective of this project is to develop a machine learning classification model that assists animal rescue organizations in identifying animals that are less likely to be adopted promptly. This will enable these organizations to transfer these animals to no-kill shelters or shelters that have a longer waiting period, thereby improving their chances of survival. The machine learning model will follow the following steps:<br />
 <br />
+
 ![ML Steps](Images/ml_steps.png)<br />
 
 The project also seeks to offer valuable insights, through EDA, into the characteristics that people prioritize when adopting a pet. <br />
@@ -21,35 +22,41 @@ The project also seeks to offer valuable insights, through EDA, into the charact
 1. What is the overall adoption rate of pets in the dataset?<br />
 <br />
 According to our data, the overall adoption rate for pets is around 33%. This means that for every 30 pets that enter the shelter system, 10 are successfully adopted by a loving family. This rate reflects the demand for pet companions across the country and the commitment of animal welfare organizations to finding homes for animals in need. Unfortunately, this also means that the remaining 20 pets may face humane euthanasia, as some shelters adhere to a 72-hour waiting period before making this decision.<br />
+
 ![Pet Adoption Rates](Images/pet_adoption_rates.png)<br />
 
 2. Do adoption rates vary by pet type?<br />
 <br />
 The data indicates that Dogs have the highest adoption rate at 46%, with Birds following at 30%, Cats at 29%, and Rabbits at 25%. This suggests that certain pet types may be more appealing to prospective adopters.<br />
+
 ![Pet Type Adoption Rates](Images/pet_type_adoption_rate.png)<br />
 
 3. What are the key factors that influence whether a pet gets adopted?<br />
 <br />
 We used the Chi-Square test to calculate the p-values for each feature in order to deteremine their importance. The six most important features were:<br />
 <br />
+
 ![Key Factors](Images/key_factors.png)<br />
 
 4. Does the pet's age affect its likelihood of adoption?<br />
 <br />
 Younger pets are more energetic, trainable, and adaptable, making them a more desirable adoption choice with 2.5 times higher adoption rates. Older pets often face challenges in finding homes due to concerns about potential medical issues and lower activity levels. We used bins to divide the pets in age groups.<br />
 <br />
+
 ![Age Percentage](Images/age_adoption_perc.png)<br />
 
 5. Is there a correlation between the pet's breed and its adoption status?<br />
 <br />
 Labradors are one of the most popular dog breeds and consistently have high adoption rates of 72% as compared to 29% for Golden Retrievers and other breeds. Their friendly, intelligent, and adaptable nature make them a highly sought-after companion for many families. Some breeds may be unfairly stereotyped, causing potential adopters to overlook them despite their loving and loyal personalities. Persian cats have an adoption rate of 26% as they are stereotyped as not children friendly.<br />
 <br />
+
 ![Breed Adoption](Images/breed_adoption_perc.png)<br />
 
 6. Do specific attributes like color or size impact adoption rates?<br />
 <br />
 We found that color has little to no relation to the pet adoption rate. The data shows that medium-sized pets have the highest adoption rate at 62%, likely because they fit well into a variety of living spaces and lifestyles. Small pets come in second at 18%, potentially appealing to adopters with limited space or who prefer a more compact companion. Larger pets have the lowest adoption rate at 15%, possibly due to concerns over accommodating their size and energy requirements in certain homes. 
 <br />
+
 ![Size Percentage](Images/size_adoption_rate.png)<br />
 
 7. What is the average time it takes for pets to get adopted?<br />
@@ -66,12 +73,14 @@ The time it takes for pets to find their forever homes does not vary significant
 <br />
 Healthy pets are also more likely to be adopted at 39%, versus 10% for pets with medical conditions. These statistics highlight the importance of proper medical care in preparing pets for adoption.<br />
 <br />
+
 ![Health Condition](Images/health_condition_adoption_rate.png)<br />
 
 10. How does the vaccination status of pets affect their adoption rates?<br />
 <br />
 Vaccinated pets have a 42% adoption rate, compared to 11% for unvaccinated pets.<br />
 <br />
+
 ![Size Percentage](Images/vaccination_adoption_rate.png)<br />
 
 ## Steps
