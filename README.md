@@ -1,22 +1,78 @@
+
+![ML Steps](Images/cover.png)<br />
+# Pet Adoption
+
 ## Overview
 
-This project analyzes pet adoption data to uncover factors that influence adoption rates and build a classification model to predict adoption status.
+The objective of this project is to develop a machine learning classification model that assists animal rescue organizations in identifying animals that are less likely to be adopted promptly. This will enable these organizations to transfer these animals to no-kill shelters or shelters that have a longer waiting period, thereby improving their chances of survival. The machine learning model will follow the following steps:<br />
+<br />
+![ML Steps](Images/ml_steps.png)<br />
 
-### [Presentation Link](https://gamma.app/docs/Pet-Adoption-y53svrpmz3k75mv)
+The project also seeks to offer valuable insights, through EDA, into the characteristics that people prioritize when adopting a pet. <br />
 
 
-## Questions Addressed
 
-1. What is the overall adoption rate of pets in the dataset?
-2. Do adoption rates vary by pet type?
-3. What are the key factors that influence whether a pet gets adopted?
-4. Does the pet's age affect its likelihood of adoption?
-5. Is there a correlation between the pet's breed and its adoption status?
-6. Do specific attributes like color, breed, or health status impact adoption rates?
-7. What is the average time it takes for pets to get adopted?
-8. How do different factors (age, breed, health status) affect the time to adoption?
-9. How do special conditions (e.g., disabilities) impact the adoption chances of pets?
-10. How does the vaccination status of pets affect their adoption rates?
+## Presentation
+
+### [Gamma.app Presentation Link](https://gamma.app/docs/Pet-Adoption-y53svrpmz3k75mv)<br />
+
+## Questions Addressed during EDA
+
+1. What is the overall adoption rate of pets in the dataset?<br />
+<br />
+According to our data, the overall adoption rate for pets is around 33%. This means that for every 30 pets that enter the shelter system, 10 are successfully adopted by a loving family. This rate reflects the demand for pet companions across the country and the commitment of animal welfare organizations to finding homes for animals in need. Unfortunately, this also means that the remaining 20 pets may face humane euthanasia, as some shelters adhere to a 72-hour waiting period before making this decision.<br />
+![Pet Adoption Rates](Images/pet_adoption_rates.png)<br />
+
+2. Do adoption rates vary by pet type?<br />
+<br />
+The data indicates that Dogs have the highest adoption rate at 46%, with Birds following at 30%, Cats at 29%, and Rabbits at 25%. This suggests that certain pet types may be more appealing to prospective adopters.<br />
+![Pet Type Adoption Rates](Images/pet_type_adoption_rate.png)<br />
+
+3. What are the key factors that influence whether a pet gets adopted?<br />
+<br />
+We used the Chi-Square test to calculate the p-values for each feature in order to deteremine their importance. The six most important features were:<br />
+<br />
+![Key Factors](Images/key_factors.png)<br />
+
+4. Does the pet's age affect its likelihood of adoption?<br />
+<br />
+Younger pets are more energetic, trainable, and adaptable, making them a more desirable adoption choice with 2.5 times higher adoption rates. Older pets often face challenges in finding homes due to concerns about potential medical issues and lower activity levels. We used bins to divide the pets in age groups.<br />
+<br />
+![Age Percentage](Images/age_adoption_perc.png)<br />
+
+5. Is there a correlation between the pet's breed and its adoption status?<br />
+<br />
+Labradors are one of the most popular dog breeds and consistently have high adoption rates of 72% as compared to 29% for Golden Retrievers and other breeds. Their friendly, intelligent, and adaptable nature make them a highly sought-after companion for many families. Some breeds may be unfairly stereotyped, causing potential adopters to overlook them despite their loving and loyal personalities. Persian cats have an adoption rate of 26% as they are stereotyped as not children friendly.<br />
+<br />
+![Breed Adoption](Images/breed_adoption_perc.png)<br />
+
+6. Do specific attributes like color or size impact adoption rates?<br />
+<br />
+We found that color has little to no relation to the pet adoption rate. The data shows that medium-sized pets have the highest adoption rate at 62%, likely because they fit well into a variety of living spaces and lifestyles. Small pets come in second at 18%, potentially appealing to adopters with limited space or who prefer a more compact companion. Larger pets have the lowest adoption rate at 15%, possibly due to concerns over accommodating their size and energy requirements in certain homes. 
+<br />
+![Size Percentage](Images/size_adoption_rate.png)<br />
+
+7. What is the average time it takes for pets to get adopted?<br />
+<br />
+The data shows that it takes 44 days for a pet to get adopted. 
+<br />
+
+8. How do different factors (age, breed, health status) affect the time to adoption?<br />
+<br />
+The time it takes for pets to find their forever homes does not vary significantly. On average, it takes pets 39-51 days depending on the different factors (pet type, breed, age,  color, size, vaccinated, health condition and previous owner).
+<br />
+
+9. How do health conditions (e.g., disabilities) impact the adoption chances of pets?<br />
+<br />
+Healthy pets are also more likely to be adopted at 39%, versus 10% for pets with medical conditions. These statistics highlight the importance of proper medical care in preparing pets for adoption.<br />
+<br />
+![Health Condition](Images/health_condition_adoption_rate.png)<br />
+
+10. How does the vaccination status of pets affect their adoption rates?<br />
+<br />
+Vaccinated pets have a 42% adoption rate, compared to 11% for unvaccinated pets.<br />
+<br />
+![Size Percentage](Images/vaccination_adoption_rate.png)<br />
 
 ## Steps
 
@@ -56,7 +112,7 @@ This project analyzes pet adoption data to uncover factors that influence adopti
 4. **Splitting Data**:
     - The data is split into training and testing sets.
     ```python
-    X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+    X_train, X_test, y_train, y_test = train_test_split(X, y, random_state=44)
     ```
 
 5. **Standardization**:
@@ -68,9 +124,13 @@ This project analyzes pet adoption data to uncover factors that influence adopti
     ```
 
 6. **Encoding**:
-    - Categorical features are encoded using one-hot encoding or ordinal encoding.
+    - Categorical features are encoded using one-hot encoding and ordinal encoding (size).
     ```python
     encoder = OneHotEncoder()
+    X_train_encoded = encoder.fit_transform(X_train)
+    X_test_encoded = encoder.transform(X_test)
+
+    encoder = OrdinalEncoder(categories=[['Small','Medium','Large']], encoded_missing_value=-1)
     X_train_encoded = encoder.fit_transform(X_train)
     X_test_encoded = encoder.transform(X_test)
     ```
@@ -78,11 +138,11 @@ This project analyzes pet adoption data to uncover factors that influence adopti
 7. **Synthetic Sampling**:
     - Synthetic sampling techniques like RandomOverSampler are used to handle class imbalance.
     ```python
-    ros = RandomOverSampler(random_state=42)
+    ros = RandomOverSampler(random_state=44)
     X_resampled, y_resampled = ros.fit_resample(X_train, y_train)
     ```
 8. **Model Selection**:
-    - Various machine learning models are trained and evaluated.
+    - Various machine learning models are trained and evaluated:
     ```python
     models = {
         'Logistic Regression': LogisticRegression(),
@@ -95,18 +155,29 @@ This project analyzes pet adoption data to uncover factors that influence adopti
         'AdaBoost': AdaBoostClassifier()
     }
     ```
+    
+    - Results of the models:<br />
+    <br /> 
+![Model Results](Images/model_results.png)<br /> 
+
 
 9. **Optimization**:
-    - Hyperparameter tuning is performed using GridSearchCV
+    - Best Depth and Hyperparameter tuning is performed using GridSearchCV
     ```python
     param_grid = {'C': [0.1, 1, 10, 100], 'gamma': [1, 0.1, 0.01, 0.001], 'kernel': ['rbf']}
     grid = GridSearchCV(SVC(), param_grid, refit=True, verbose=2)
     grid.fit(X_train, y_train)
     ```
 
+    - Results after optimization:<br />
+    <br /> 
+![Model Results](Images/model_results_optimization.png)<br /> 
+
 ## Conclusion
 
-This notebook provides a comprehensive analysis of pet adoption data and builds a classification model to predict adoption outcomes based on various features. The steps include data preprocessing, exploratory data analysis, model training, and optimization.
+Based on our comprehensive analysis of pet adoption data, we've identified key insights and strategies to help increase adoption rates nationwide. By focusing on areas like pet attributes we can create a more positive and sustainable future for shelter animals.
+
+We were successful in developing a machine learning model that achieves a precision score exceeding 95%. This model can assist rescue workers in transferring animals to shelters with no-kill policies or longer waiting periods, thereby enhancing their prospects for survival.
 
 ## Requirements
 
