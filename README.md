@@ -78,12 +78,12 @@ The project also seeks to offer valuable insights, through EDA, into the charact
 
 10. How does the vaccination status of pets affect their adoption rates?<br />
 <br />
-    Vaccinated pets have a 42% adoption rate, compared to 11% for unvaccinated pets.<br />
+Vaccinated pets have a 42% adoption rate, compared to 11% for unvaccinated pets.<br />
 <br />
 
 ![Size Percentage](Images/vaccination_adoption_rate.png)<br />
 
-## Steps
+## Machine Learning Model Steps
 
 1. **Libraries Used**:
     ```python
@@ -181,6 +181,14 @@ The project also seeks to offer valuable insights, through EDA, into the charact
     - Results after optimization:<br />
     <br /> 
 ![Model Results](Images/model_results_optimization.png)<br /> 
+
+10. **Important Features**
+    - We used the important features method with the Ada Boost and Random Forest classifier that had the best results.
+    - ADA Model:<br /> 
+![Model Results](Images/ada_important_features.png)<br /> 
+    - Random Forest Model:<br /> 
+![Model Results](Images/rfc_important_features.png)<br /> 
+    - The important features of the two models and the ones derived using the Chi-Square test yielded different results.
 
 ## Conclusion
 
