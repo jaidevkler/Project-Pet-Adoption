@@ -11,77 +11,54 @@ The objective of this project is to develop a machine learning classification mo
 
 The project also seeks to offer valuable insights, through EDA, into the characteristics that people prioritize when adopting a pet. <br />
 
-
-
 ## Presentation
 
 ### [Gamma.app Presentation Link](https://gamma.app/docs/Pet-Adoption-y53svrpmz3k75mv)<br />
 
 ## Questions Addressed during EDA
 
-1. What is the overall adoption rate of pets in the dataset?<br />
-<br />
-    According to our data, the overall adoption rate for pets is around 33%. This means that for every 30 pets that enter the shelter system, 10 are successfully adopted by a loving family. This rate reflects the demand for pet companions across the country and the commitment of animal welfare organizations to finding homes for animals in need. Unfortunately, this also means that the remaining 20 pets may face humane euthanasia, as some shelters adhere to a 72-hour waiting period before making this decision.<br />
+1. **What is the overall adoption rate of pets in the dataset? According to our data, the overall adoption rate for pets is around 33%. This means that for every 30 pets that enter the shelter system, 10 are successfully adopted by a loving family. This rate reflects the demand for pet companions across the country and the commitment of animal welfare organizations to finding homes for animals in need. Unfortunately, this also means that the remaining 20 pets may face humane euthanasia, as some shelters adhere to a 72-hour waiting period before making this decision.**<br />
 
-![Pet Adoption Rates](Images/pet_adoption_rates.png)<br />
+![Pet Adoption Rates](Images/pet_adoption_rates.png#gh-light-mode-only)<br />
+![Pet Adoption Rates](Images/pet_adoption_rates_dark.png#gh-dark-mode-only)<br />
 
-2. Do adoption rates vary by pet type?<br />
-<br />
-    The data indicates that Dogs have the highest adoption rate at 46%, with Birds following at 30%, Cats at 29%, and Rabbits at 25%. This suggests that certain pet types may be more appealing to prospective adopters.<br />
+2. **Do adoption rates vary by pet type? The data indicates that Dogs have the highest adoption rate at 46%, with Birds following at 30%, Cats at 29%, and Rabbits at 25%. This suggests that certain pet types may be more appealing to prospective adopters.**<br />
 
-![Pet Type Adoption Rates](Images/pet_type_adoption_rate.png)<br />
+![Pet Type Adoption Rates](Images/pet_type_adoption_rate.png#gh-light-mode-only)<br />
+![Pet Type Adoption Rates](Images/pet_type_adoption_rate_dark.png#gh-dark-mode-only)<br />
 
-3. What are the key factors that influence whether a pet gets adopted?<br />
-<br />
-    We used the Chi-Square test to calculate the p-values for each feature in order to deteremine their importance. The six most important features were:<br />
-<br />
+3. **What are the key factors that influence whether a pet gets adopted? We used the Chi-Square test to calculate the p-values for each feature in order to deteremine their importance. The six most important features were:**<br />
 
 ![Key Factors](Images/key_factors.png)<br />
 
-4. Does the pet's age affect its likelihood of adoption?<br />
-<br />
-    Younger pets are more energetic, trainable, and adaptable, making them a more desirable adoption choice with 2.5 times higher adoption rates. Older pets often face challenges in finding homes due to concerns about potential medical issues and lower activity levels. We used bins to divide the pets in age groups.<br />
-<br />
+4. **Does the pet's age affect its likelihood of adoption? Younger pets are more energetic, trainable, and adaptable, making them a more desirable adoption choice with 2.5 times higher adoption rates. Older pets often face challenges in finding homes due to concerns about potential medical issues and lower activity levels. We used bins to divide the pets in age groups.**<br />
 
-![Age Percentage](Images/age_adoption_perc.png)<br />
+![Age Percentage](Images/age_adoption_perc.png#gh-light-mode-only)<br />
+![Age Percentage](Images/age_adoption_perc_dark.png#gh-dark-mode-only)<br />
 
-5. Is there a correlation between the pet's breed and its adoption status?<br />
-<br />
-    Labradors are one of the most popular dog breeds and consistently have high adoption rates of 72% as compared to 29% for Golden Retrievers and other breeds. Their friendly, intelligent, and adaptable nature make them a highly sought-after companion for many families. Some breeds may be unfairly stereotyped, causing potential adopters to overlook them despite their loving and loyal personalities. Persian cats have an adoption rate of 26% as they are stereotyped as not children friendly.<br />
-<br />
+5. **Is there a correlation between the pet's breed and its adoption status? Labradors are one of the most popular dog breeds and consistently have high adoption rates of 72% as compared to 29% for Golden Retrievers and other breeds. Their friendly, intelligent, and adaptable nature make them a highly sought-after companion for many families. Some breeds may be unfairly stereotyped, causing potential adopters to overlook them despite their loving and loyal personalities. Persian cats have an adoption rate of 26% as they are stereotyped as not children friendly.**<br />
 
-![Breed Adoption](Images/breed_adoption_perc.png)<br />
+![Breed Adoption](Images/breed_adoption_perc.png#gh-light-mode-only)<br />
+![Breed Adoption](Images/breed_adoption_perc_dark.png#gh-dark-mode-only)<br />
 
-6. Do specific attributes like color or size impact adoption rates?<br />
-<br />
-    We found that color has little to no relation to the pet adoption rate. The data shows that medium-sized pets have the highest adoption rate at 62%, likely because they fit well into a variety of living spaces and lifestyles. Small pets come in second at 18%, potentially appealing to adopters with limited space or who prefer a more compact companion. Larger pets have the lowest adoption rate at 15%, possibly due to concerns over accommodating their size and energy requirements in certain homes. 
-<br />
+6. **Do specific attributes like color or size impact adoption rates? We found that color has little to no relation to the pet adoption rate. The data shows that medium-sized pets have the highest adoption rate at 62%, likely because they fit well into a variety of living spaces and lifestyles. Small pets come in second at 18%, potentially appealing to adopters with limited space or who prefer a more compact companion. Larger pets have the lowest adoption rate at 15%, possibly due to concerns over accommodating their size and energy requirements in certain homes.**<br />
 
-![Size Percentage](Images/size_adoption_rate.png)<br />
+![Size Percentage](Images/size_adoption_rate.png#gh-light-mode-only)<br />
+![Size Percentage](Images/size_adoption_rate_dark.png#gh-dark-mode-only)<br />
 
-7. What is the average time it takes for pets to get adopted?<br />
-<br />
-    The data shows that it takes 44 days for a pet to get adopted. 
-<br />
+7. **What is the average time it takes for pets to get adopted? The data shows that it takes 44 days for a pet to get adopted.**<br />
 
-8. How do different factors (age, breed, health status) affect the time to adoption?<br />
-<br />
-    The time it takes for pets to find their forever homes does not vary significantly. On average, it takes pets 39-51 days depending on the different factors (pet type, breed, age,  color, size, vaccinated, health condition and previous owner).
-<br />
+8. **How do different factors (age, breed, health status) affect the time to adoption? The time it takes for pets to find their forever homes does not vary significantly. On average, it takes pets 39-51 days depending on the different factors (pet type, breed, age,  color, size, vaccinated, health condition and previous owner).**<br />
 
-9. How do health conditions (e.g., disabilities) impact the adoption chances of pets?<br />
-<br />
-    Healthy pets are also more likely to be adopted at 39%, versus 10% for pets with medical conditions. These statistics highlight the importance of proper medical care in preparing pets for adoption.<br />
-<br />
+9. **How do health conditions (e.g., disabilities) impact the adoption chances of pets? Healthy pets are also more likely to be adopted at 39%, versus 10% for pets with medical conditions. These statistics highlight the importance of proper medical care in preparing pets for adoption.**<br />
 
-![Health Condition](Images/health_condition_adoption_rate.png)<br />
+![Health Condition](Images/health_condition_adoption_rate.png#gh-light-mode-only)<br />
+![Size Percentage](Images/size_adoption_rate_dark.png#gh-dark-mode-only)<br />
 
-10. How does the vaccination status of pets affect their adoption rates?<br />
-<br />
-Vaccinated pets have a 42% adoption rate, compared to 11% for unvaccinated pets.<br />
-<br />
+10. **How does the vaccination status of pets affect their adoption rates? Vaccinated pets have a 42% adoption rate, compared to 11% for unvaccinated pets.**<br />
 
-![Size Percentage](Images/vaccination_adoption_rate.png)<br />
+![Size Percentage](Images/vaccination_adoption_rate.png#gh-light-mode-only)<br />
+![Size Percentage](Images/vaccination_adoption_rate_dark.png#gh-dark-mode-only)<br />
 
 ## Machine Learning Model Steps
 
@@ -185,9 +162,11 @@ Vaccinated pets have a 42% adoption rate, compared to 11% for unvaccinated pets.
 10. **Important Features**
     - We used the important features method with the Ada Boost and Random Forest classifier that had the best results.
     - ADA Model:<br /> 
-![Model Results](Images/ada_important_features.png)<br /> 
+![Model Results](Images/ada_important_features.png#gh-light-mode-only)<br /> 
+![Model Results](Images/ada_important_features_dark.png#gh-dark-mode-only)<br /> 
     - Random Forest Model:<br /> 
-![Model Results](Images/rfc_important_features.png)<br /> 
+![Model Results](Images/rfc_important_features.png#gh-light-mode-only)<br /> 
+![Model Results](Images/rfc_important_features_dark.png#gh-dark-mode-only)<br /> 
     - The important features of the two models and the ones derived using the Chi-Square test yielded different results.
 
 ## Conclusion
