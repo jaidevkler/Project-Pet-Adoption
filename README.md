@@ -7,7 +7,8 @@
 The objective of this project is to develop a machine learning classification model that assists animal rescue organizations in identifying animals that are less likely to be adopted promptly. This will enable these organizations to transfer these animals to no-kill shelters or shelters that have a longer waiting period, thereby improving their chances of survival. The machine learning model will follow the following steps:<br />
 <br />
 
-![ML Steps](Images/ml_steps.png)<br />
+![ML Steps](Images/ml_steps.png#gh-light-mode-only)<br />
+![ML Steps](Images/ml_steps_dark.png#gh-dark-mode-only)<br />
 
 The project also seeks to offer valuable insights, through EDA, into the characteristics that people prioritize when adopting a pet. <br />
 
@@ -29,7 +30,8 @@ The project also seeks to offer valuable insights, through EDA, into the charact
 
 3. **What are the key factors that influence whether a pet gets adopted? We used the Chi-Square test to calculate the p-values for each feature in order to deteremine their importance. The six most important features were:**<br />
 
-![Key Factors](Images/key_factors.png)<br />
+![Key Factors](Images/key_factors.png#gh-light-mode-only)<br />
+![Key Factors](Images/key_factors_dark.png#gh-dark-mode-only)<br />
 
 4. **Does the pet's age affect its likelihood of adoption? Younger pets are more energetic, trainable, and adaptable, making them a more desirable adoption choice with 2.5 times higher adoption rates. Older pets often face challenges in finding homes due to concerns about potential medical issues and lower activity levels. We used bins to divide the pets in age groups.**<br />
 
@@ -144,7 +146,8 @@ The project also seeks to offer valuable insights, through EDA, into the charact
     
     - Results of the models:<br />
     <br /> 
-![Model Results](Images/model_results.png)<br /> 
+![Model Results](Images/model_results.png#gh-light-mode-only)<br /> 
+![Model Results](Images/model_results_dark.png#gh-dark-mode-only)<br /> 
 
 
 9. **Optimization**:
@@ -157,7 +160,8 @@ The project also seeks to offer valuable insights, through EDA, into the charact
 
     - Results after optimization:<br />
     <br /> 
-![Model Results](Images/model_results_optimization.png)<br /> 
+![Model Results](Images/model_results_optimization.png#gh-light-mode-only)<br />
+![Model Results](Images/model_results_optimization_dark.png#gh-dark-mode-only)<br /> 
 
 10. **Important Features**
     - We used the important features method with the Ada Boost and Random Forest classifier that had the best results.
